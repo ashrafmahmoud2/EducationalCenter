@@ -3,56 +3,72 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace EducationalCenterBusinessLayer
+namespace EducationalCenterBusinessLayer 
 {
-    public class clsStudents
+    public  class clsStudents: clsPeople
     {
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode Mode { get; set; } = enMode.AddNew;
         public int StudentID { get; set; }
         public int PersonID { get; set; }
-        public string Grad { get; set; }
+        public   int GradID { get; set; }
         public int CreatedByUserID { get; set; }
-        public clsStudents()
+
+        public String GradName {  get; set; }
+       
+
+             
+        public clsStudents() 
         {
             this.StudentID = 0;
             this.PersonID = 0;
-            this.Grad = "";
+            this.GradID = 0;
             this.CreatedByUserID = 0;
+            this.GradName = clsGraduationDegrees.Find(GradID).DegreeName;
+
             this.Mode = enMode.AddNew;
         }
-        private clsStudents(int StudentID, int PersonID, string Grad, int CreatedByUserID)
+        private clsStudents(int StudentID, int PersonID, int GradID, int CreatedByUserID)
         {
             this.StudentID = StudentID;
             this.PersonID = PersonID;
-            this.Grad = Grad;
+            this.GradID = GradID;
             this.CreatedByUserID = CreatedByUserID;
+            this.GradName = clsGraduationDegrees.Find(GradID).DegreeName;
             this.Mode = enMode.Update;
         }
         public static clsStudents Find(int StudentID)
         {
             int PersonID = 0;
-            string Grad = "";
+            int GradID = 0;
             int CreatedByUserID = 0;
 
 
-            bool IsFound = clsStudentsData.GetStudentInfoByID(StudentID, ref PersonID, ref Grad, ref CreatedByUserID);
 
-            return (IsFound) ? (new clsStudents(StudentID, PersonID, Grad, CreatedByUserID)) : null;
+            bool IsFound = clsStudentsData.GetStudentInfoByID(StudentID, ref PersonID, ref GradID, ref CreatedByUserID);
+
+            return (IsFound) ? (new clsStudents(StudentID, PersonID, GradID, CreatedByUserID)) : null;
         }
         public bool _AddNewStudents()
         {
-            this.StudentID = clsStudentsData.AddNewStudent(this.PersonID, this.Grad, this.CreatedByUserID);
+            this.StudentID = clsStudentsData.AddNewStudent(this.PersonID, this.GradID, this.CreatedByUserID);
             return (this.StudentID != -1);
         }
 
         private bool _UpdateStudents()
         {
-            return clsStudentsData.UpdateStudent(this.StudentID, this.PersonID, this.Grad, this.CreatedByUserID);
+            return clsStudentsData.UpdateStudent(this.StudentID, this.PersonID, this.GradID, this.CreatedByUserID);
         }
 
         public bool Save()
         {
+
+
+            if (!base.Save())
+            {
+                return false; // If base.Save() returns false, return false immediately
+            }
+
             switch (Mode)
             {
                 case enMode.AddNew:
@@ -68,6 +84,8 @@ namespace EducationalCenterBusinessLayer
                 case enMode.Update:
                     return _UpdateStudents();
             }
+            
+
             return false;
         }
         public static bool DeleteStudents(int StudentID)
@@ -82,30 +100,22 @@ namespace EducationalCenterBusinessLayer
         {
             return clsStudentsData.DoesStudentExist(StudentsID);
         }
-        static void Main(string[] args)
-        {
-
-            if (DoesStudentsExist(20))
-            {
-                Console.WriteLine("Exist");
-            }
-            else
-            {
-                Console.WriteLine("not Exist");
-            }
-
-            //  TestAddStudents();
-            //    TestFindStudents();
-            //  TestUpdateStudents();
-            //    TestDeleteStudents();
-            Console.ReadLine();
-        }
+        //static void Main(string[] args)
+        //{
+         
+        //   // TestAddStudents();
+        //  //  TestFindStudents();
+        //  // TestUpdateStudents();
+        //   //  TestDeleteStudents();
+        //    Console.ReadLine();
+        //}
         static void TestAddStudents()
         {
             clsStudents student = new clsStudents();
-            student.PersonID = 8;
-            student.Grad = "Test Add";
-            student.CreatedByUserID = 5;
+           // student.StudentID = ;
+            student.PersonID = 2;
+            student.GradID = 2;
+            student.CreatedByUserID = 4;
             ;
 
             if (student.Save())
@@ -134,11 +144,12 @@ namespace EducationalCenterBusinessLayer
         }
         static void TestUpdateStudents()
         {
-            int StudentsIdToUpdate = 13; // Replace with the actual Students ID to update
+            int StudentsIdToUpdate = 1; // Replace with the actual Students ID to update
+
 
             clsStudents Students = clsStudents.Find(StudentsIdToUpdate);
 
-            Students.Grad = "Update2";
+            Students.GradID = 12;
 
             if (Students != null)
             {
@@ -162,7 +173,7 @@ namespace EducationalCenterBusinessLayer
         }
         static void TestDeleteStudents()
         {
-            int StudentsIdToDelete = 36; // Replace with the actual Students ID to delete
+            int StudentsIdToDelete = 17; // Replace with the actual Students ID to delete
 
             if (clsStudents.DeleteStudents(StudentsIdToDelete))
             {

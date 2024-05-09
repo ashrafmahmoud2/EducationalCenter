@@ -1,4 +1,4 @@
-﻿using EducationalCenterBusiness;
+﻿using EducationalCenterBusinessLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

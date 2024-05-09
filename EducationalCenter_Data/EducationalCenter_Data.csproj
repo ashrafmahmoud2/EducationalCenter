@@ -51,6 +51,7 @@
     <Compile Include="clsDataAccessHelper.cs" />
     <Compile Include="clsDataAccessSettings.cs" />
     <Compile Include="clsErrorLogger.cs" />
+    <Compile Include="clsGraduationDegreesData.cs" />
     <Compile Include="clsLogHandler.cs" />
     <Compile Include="clsPersonData.cs" />
     <Compile Include="clsStudentData.cs" />

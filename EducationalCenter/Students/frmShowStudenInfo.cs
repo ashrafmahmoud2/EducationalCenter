@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EducationalCenterBusinessLayer;
+using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,29 @@ namespace My_Student_Center.Students
 {
     public partial class frmShowStudenInfo : Form
     {
-        public frmShowStudenInfo()
+        public frmShowStudenInfo(int StudenID)
         {
             InitializeComponent();
+            FillUcStudenInfo(StudenID);
+        }
+
+        public  void  FillUcStudenInfo(int StudenID)
+        {
+            clsStudents stu = clsStudents.Find(StudenID);
+            if (stu != null)
+            {
+                ucPersoneCard1.FillUCPersoenInfo(stu.PersonID);
+                txtCreatedByUser.Text = stu.CreatedByUserID.ToString();
+                txtStudentID.Text = stu.StudentID.ToString();
+                combo.SelectedIndex = combo.FindString(stu.GradName);
+            }
+            else
+            {
+                MessageBox.Show("frmShowStudenInfo Is Null");
+            }
+           
+
+           
         }
     }
 }

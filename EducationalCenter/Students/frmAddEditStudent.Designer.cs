@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.txtCreatedByUser = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtStudentID = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbGradeLevels = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,8 +38,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.txtStudentID = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtCreatedByUser = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ucPersoneCardWithFilter1 = new My_Student_Center.People.user_control.ucPersoneCardWithFilter();
             this.guna2GroupBox1.SuspendLayout();
@@ -62,129 +62,12 @@
             this.guna2GroupBox1.Controls.Add(this.btnSave);
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(0, 499);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(0, 614);
+            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(1035, 165);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(1380, 203);
             this.guna2GroupBox1.TabIndex = 180;
             this.guna2GroupBox1.Text = "Student Information";
-            this.guna2GroupBox1.Click += new System.EventHandler(this.guna2GroupBox1_Click);
-            // 
-            // cbGradeLevels
-            // 
-            this.cbGradeLevels.BackColor = System.Drawing.Color.Transparent;
-            this.cbGradeLevels.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(37)))), ((int)(((byte)(193)))));
-            this.cbGradeLevels.BorderRadius = 9;
-            this.cbGradeLevels.BorderThickness = 2;
-            this.cbGradeLevels.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbGradeLevels.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbGradeLevels.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(41)))), ((int)(((byte)(123)))));
-            this.cbGradeLevels.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(41)))), ((int)(((byte)(123)))));
-            this.cbGradeLevels.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.cbGradeLevels.ForeColor = System.Drawing.Color.Black;
-            this.cbGradeLevels.ItemHeight = 30;
-            this.cbGradeLevels.Location = new System.Drawing.Point(603, 64);
-            this.cbGradeLevels.Name = "cbGradeLevels";
-            this.cbGradeLevels.Size = new System.Drawing.Size(211, 36);
-            this.cbGradeLevels.TabIndex = 181;
-            this.cbGradeLevels.SelectedIndexChanged += new System.EventHandler(this.cbGradeLevels_SelectedIndexChanged);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.pictureBox2.Location = new System.Drawing.Point(561, 67);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(31, 26);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 180;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(456, 70);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 21);
-            this.label3.TabIndex = 179;
-            this.label3.Text = "Grade Level:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // pbIsActive
-            // 
-            this.pbIsActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.pbIsActive.Location = new System.Drawing.Point(139, 105);
-            this.pbIsActive.Name = "pbIsActive";
-            this.pbIsActive.Size = new System.Drawing.Size(31, 26);
-            this.pbIsActive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbIsActive.TabIndex = 170;
-            this.pbIsActive.TabStop = false;
-            this.pbIsActive.Click += new System.EventHandler(this.pbIsActive_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(5, 108);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 21);
-            this.label4.TabIndex = 169;
-            this.label4.Text = "Created By User:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.pictureBox1.Location = new System.Drawing.Point(106, 64);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 26);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 168;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(11, 67);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(92, 21);
-            this.label22.TabIndex = 141;
-            this.label22.Text = "Student ID:";
-            this.label22.Click += new System.EventHandler(this.label22_Click);
-            // 
-            // txtStudentID
-            // 
-            this.txtStudentID.BackColor = System.Drawing.Color.White;
-            this.txtStudentID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(37)))), ((int)(((byte)(193)))));
-            this.txtStudentID.BorderRadius = 9;
-            this.txtStudentID.BorderThickness = 2;
-            this.txtStudentID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtStudentID.DefaultText = "";
-            this.txtStudentID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtStudentID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtStudentID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtStudentID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtStudentID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(41)))), ((int)(((byte)(123)))));
-            this.txtStudentID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtStudentID.ForeColor = System.Drawing.Color.Black;
-            this.txtStudentID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(41)))), ((int)(((byte)(123)))));
-            this.txtStudentID.Location = new System.Drawing.Point(147, 57);
-            this.txtStudentID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtStudentID.Name = "txtStudentID";
-            this.txtStudentID.PasswordChar = '\0';
-            this.txtStudentID.PlaceholderText = "";
-            this.txtStudentID.SelectedText = "";
-            this.txtStudentID.Size = new System.Drawing.Size(244, 33);
-            this.txtStudentID.TabIndex = 201;
-            this.txtStudentID.TextChanged += new System.EventHandler(this.txtStudentID_TextChanged);
             // 
             // txtCreatedByUser
             // 
@@ -202,15 +85,127 @@
             this.txtCreatedByUser.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.txtCreatedByUser.ForeColor = System.Drawing.Color.Black;
             this.txtCreatedByUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(41)))), ((int)(((byte)(123)))));
-            this.txtCreatedByUser.Location = new System.Drawing.Point(180, 105);
-            this.txtCreatedByUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCreatedByUser.Location = new System.Drawing.Point(240, 129);
+            this.txtCreatedByUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCreatedByUser.Name = "txtCreatedByUser";
             this.txtCreatedByUser.PasswordChar = '\0';
             this.txtCreatedByUser.PlaceholderText = "";
             this.txtCreatedByUser.SelectedText = "";
-            this.txtCreatedByUser.Size = new System.Drawing.Size(211, 33);
+            this.txtCreatedByUser.Size = new System.Drawing.Size(281, 41);
             this.txtCreatedByUser.TabIndex = 202;
-            this.txtCreatedByUser.TextChanged += new System.EventHandler(this.txtCreatedByUser_TextChanged);
+            // 
+            // txtStudentID
+            // 
+            this.txtStudentID.BackColor = System.Drawing.Color.White;
+            this.txtStudentID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(37)))), ((int)(((byte)(193)))));
+            this.txtStudentID.BorderRadius = 9;
+            this.txtStudentID.BorderThickness = 2;
+            this.txtStudentID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtStudentID.DefaultText = "";
+            this.txtStudentID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtStudentID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtStudentID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtStudentID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtStudentID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(41)))), ((int)(((byte)(123)))));
+            this.txtStudentID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.txtStudentID.ForeColor = System.Drawing.Color.Black;
+            this.txtStudentID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(41)))), ((int)(((byte)(123)))));
+            this.txtStudentID.Location = new System.Drawing.Point(196, 70);
+            this.txtStudentID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtStudentID.Name = "txtStudentID";
+            this.txtStudentID.PasswordChar = '\0';
+            this.txtStudentID.PlaceholderText = "";
+            this.txtStudentID.SelectedText = "";
+            this.txtStudentID.Size = new System.Drawing.Size(325, 41);
+            this.txtStudentID.TabIndex = 201;
+            // 
+            // cbGradeLevels
+            // 
+            this.cbGradeLevels.BackColor = System.Drawing.Color.Transparent;
+            this.cbGradeLevels.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(37)))), ((int)(((byte)(193)))));
+            this.cbGradeLevels.BorderRadius = 9;
+            this.cbGradeLevels.BorderThickness = 2;
+            this.cbGradeLevels.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbGradeLevels.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGradeLevels.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(41)))), ((int)(((byte)(123)))));
+            this.cbGradeLevels.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(41)))), ((int)(((byte)(123)))));
+            this.cbGradeLevels.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.cbGradeLevels.ForeColor = System.Drawing.Color.Black;
+            this.cbGradeLevels.ItemHeight = 30;
+            this.cbGradeLevels.Location = new System.Drawing.Point(804, 79);
+            this.cbGradeLevels.Margin = new System.Windows.Forms.Padding(4);
+            this.cbGradeLevels.Name = "cbGradeLevels";
+            this.cbGradeLevels.Size = new System.Drawing.Size(280, 36);
+            this.cbGradeLevels.TabIndex = 181;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.pictureBox2.Location = new System.Drawing.Point(748, 82);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(41, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 180;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(608, 86);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(124, 28);
+            this.label3.TabIndex = 179;
+            this.label3.Text = "Grade Level:";
+            // 
+            // pbIsActive
+            // 
+            this.pbIsActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.pbIsActive.Location = new System.Drawing.Point(185, 129);
+            this.pbIsActive.Margin = new System.Windows.Forms.Padding(4);
+            this.pbIsActive.Name = "pbIsActive";
+            this.pbIsActive.Size = new System.Drawing.Size(41, 32);
+            this.pbIsActive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbIsActive.TabIndex = 170;
+            this.pbIsActive.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(7, 133);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(163, 28);
+            this.label4.TabIndex = 169;
+            this.label4.Text = "Created By User:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.pictureBox1.Location = new System.Drawing.Point(141, 79);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(41, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 168;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(15, 82);
+            this.label22.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(114, 28);
+            this.label22.TabIndex = 141;
+            this.label22.Text = "Student ID:";
             // 
             // btnSave
             // 
@@ -231,31 +226,34 @@
             this.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSave.ImageOffset = new System.Drawing.Point(0, -1);
             this.btnSave.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSave.Location = new System.Drawing.Point(890, 120);
+            this.btnSave.Location = new System.Drawing.Point(1175, 148);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnSave.Size = new System.Drawing.Size(145, 45);
+            this.btnSave.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnSave.Size = new System.Drawing.Size(193, 55);
             this.btnSave.TabIndex = 210;
             this.btnSave.Text = "Save";
             // 
             // ucPersoneCardWithFilter1
             // 
             this.ucPersoneCardWithFilter1.Location = new System.Drawing.Point(0, 1);
+            this.ucPersoneCardWithFilter1.Margin = new System.Windows.Forms.Padding(5);
             this.ucPersoneCardWithFilter1.Name = "ucPersoneCardWithFilter1";
-            this.ucPersoneCardWithFilter1.Size = new System.Drawing.Size(1035, 482);
+            this.ucPersoneCardWithFilter1.Size = new System.Drawing.Size(1380, 593);
             this.ucPersoneCardWithFilter1.TabIndex = 0;
-            this.ucPersoneCardWithFilter1.Load += new System.EventHandler(this.ucPersoneCardWithFilter1_Load);
             // 
             // frmAddEditStudent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1036, 673);
+            this.ClientSize = new System.Drawing.Size(1381, 828);
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.ucPersoneCardWithFilter1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAddEditStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddEditStudent";
+            this.Load += new System.EventHandler(this.frmAddEditStudent_Load);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

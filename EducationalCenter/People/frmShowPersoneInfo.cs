@@ -16,5 +16,11 @@ namespace My_Student_Center.People
         {
             InitializeComponent();
         }
+        public frmShowPersoneInfo(int PersonID)
+        {
+            InitializeComponent();
+            ucPersoneCard1.FillUCPersoenInfo(PersonID);
+        }
+
     }
 }

@@ -1,4 +1,4 @@
-﻿using EducationalCenterBusiness;
+﻿using EducationalCenterBusinessLayer;
 using My_Student_Center.Class;
 using My_Student_Center.Dashboards;
 using My_Student_Center.Groups;

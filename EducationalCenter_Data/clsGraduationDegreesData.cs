@@ -4,19 +4,19 @@ using System.Data.SqlClient;
 
 namespace EducationalCenterDataAccess
 {
-    public class clsStudentsData
+    public class clsGraduationDegreesData
     {
-        public static bool GetStudentInfoByID(int StudentID, ref int PersonID, ref int GradID, ref int CreatedByUserID)
+        public static bool GetGraduationDegreInfoByID(int GradID, ref string DegreeName)
         {
             bool IsFound = false;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
 
-            SqlCommand command = new SqlCommand("SP_GetStudentInfoByID", connection);
+            SqlCommand command = new SqlCommand("SP_GetGraduationDegreInfoByID", connection);
             command.CommandType = CommandType.StoredProcedure;
 
-            command.Parameters.AddWithValue("@StudentID", StudentID);
+            command.Parameters.AddWithValue("@GradID", GradID);
 
             try
             {
@@ -29,10 +29,8 @@ namespace EducationalCenterDataAccess
                     // The record was found
                     IsFound = true;
 
-                    StudentID = (int)reader["StudentID"];
-                    PersonID = (int)reader["PersonID"];
                     GradID = (int)reader["GradID"];
-                    CreatedByUserID = (int)reader["CreatedByUserID"];
+                    DegreeName = (string)reader["DegreeName"];
                 }
                 else
                 {
@@ -54,22 +52,20 @@ namespace EducationalCenterDataAccess
             return IsFound;
         }
 
-        public static int AddNewStudent(int PersonID, int GradID, int CreatedByUserID)
+        public static int AddNewGraduationDegre(string DegreeName)
         {
-            int StudentID = -1;
+            int GraduationDegreID = -1;
 
 
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
-                SqlCommand command = new SqlCommand("SP_AddNewStudent", connection);
+                SqlCommand command = new SqlCommand("SP_AddNewGraduationDegre", connection);
                 command.CommandType = CommandType.StoredProcedure;
 
-                command.Parameters.AddWithValue("@PersonID", PersonID);
-                command.Parameters.AddWithValue("@GradID", GradID);
-                command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
+                command.Parameters.AddWithValue("@DegreeName", DegreeName);
                 ;
 
-                SqlParameter outputParam = new SqlParameter("@NewStudentID", SqlDbType.Int);
+                SqlParameter outputParam = new SqlParameter("@NewGraduationDegreID", SqlDbType.Int);
                 outputParam.Direction = ParameterDirection.Output;
                 command.Parameters.Add(outputParam);
 
@@ -77,7 +73,7 @@ namespace EducationalCenterDataAccess
                 {
                     connection.Open();
                     command.ExecuteNonQuery();
-                    StudentID = (int)outputParam.Value;
+                    GraduationDegreID = (int)outputParam.Value;
                 }
                 catch (Exception ex)
                 {
@@ -85,22 +81,20 @@ namespace EducationalCenterDataAccess
                 }
             }
 
-            return StudentID;
+            return GraduationDegreID;
         }
-        public static bool UpdateStudent(int StudentID, int PersonID, int GradID, int CreatedByUserID)
+        public static bool UpdateGraduationDegre(int GradID, string DegreeName)
         {
             int RowAffected = 0;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString); ;
 
 
-            SqlCommand command = new SqlCommand("SP_UpdateStudent", connection);
+            SqlCommand command = new SqlCommand("SP_UpdateGraduationDegre", connection);
             command.CommandType = CommandType.StoredProcedure;
 
-            command.Parameters.AddWithValue("@StudentID", StudentID);
-            command.Parameters.AddWithValue("@PersonID", PersonID);
             command.Parameters.AddWithValue("@GradID", GradID);
-            command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
+            command.Parameters.AddWithValue("@DegreeName", DegreeName);
             ;
 
             try
@@ -121,17 +115,17 @@ namespace EducationalCenterDataAccess
             return (RowAffected > 0);
         }
 
-        public static bool DeleteStudent(int StudentID)
+        public static bool DeleteGraduationDegre(int GraduationDegreID)
         {
             int RowAffected = 0;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString); ;
 
 
-            SqlCommand command = new SqlCommand("SP_DeleteStudent", connection);
+            SqlCommand command = new SqlCommand("SP_DeleteGraduationDegre", connection);
             command.CommandType = CommandType.StoredProcedure;
 
-            command.Parameters.AddWithValue("@StudentID", StudentID);
+            command.Parameters.AddWithValue("@GraduationDegreID", GraduationDegreID);
 
             try
             {
@@ -151,14 +145,14 @@ namespace EducationalCenterDataAccess
             return (RowAffected > 0);
         }
 
-        public static DataTable GetAllStudent()
+        public static DataTable GetAllGraduationDegre()
         {
             DataTable dt = new DataTable();
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString); ;
 
 
-            SqlCommand command = new SqlCommand("SP_GetAllStudent", connection);
+            SqlCommand command = new SqlCommand("SP_GetAllGraduationDegrees", connection);
             command.CommandType = CommandType.StoredProcedure;
 
             try
@@ -186,7 +180,7 @@ namespace EducationalCenterDataAccess
             return dt;
         }
 
-        public static bool DoesStudentExist(int StudentID)
+        public static bool DoesGraduationDegreExist(int GraduationDegreID)
         {
             bool exists = false;
 
@@ -194,9 +188,9 @@ namespace EducationalCenterDataAccess
             {
                 try
                 {
-                    SqlCommand command = new SqlCommand("SELECT TOP 1 found = 1 FROM Students WHERE StudentID = @StudentID", connection);
+                    SqlCommand command = new SqlCommand("SELECT TOP 1 found = 1 FROM Students WHERE StudentID = @GraduationDegreID", connection);
 
-                    command.Parameters.AddWithValue("@StudentID", StudentID);
+                    command.Parameters.AddWithValue("@GraduationDegreID", GraduationDegreID);
 
                     connection.Open();
 

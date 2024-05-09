@@ -1,5 +1,4 @@
-﻿using EducationalCenterBusiness;
-using EducationalCenterBusinessLayer;
+﻿using EducationalCenterBusinessLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +16,7 @@ namespace My_Student_Center.Dashboards
         public frmDashboard()
         {
             InitializeComponent();
-            guna2DataGridView1.DataSource = clsPerson.All();
+            guna2DataGridView1.DataSource = clsPeople.GetAllPeople();
 
             lblStudents.Text = clsStudents.GetAllStudents().Rows.Count.ToString();
             //lblTeachers.Text = clsTeacher.All().Rows.Count.ToString();

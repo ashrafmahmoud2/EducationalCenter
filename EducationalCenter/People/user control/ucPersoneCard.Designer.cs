@@ -129,6 +129,7 @@
             this.txtFirstName.SelectedText = "";
             this.txtFirstName.Size = new System.Drawing.Size(154, 36);
             this.txtFirstName.TabIndex = 0;
+            this.txtFirstName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblPersonID
             // 
@@ -169,6 +170,7 @@
             this.txtAddress.SelectedText = "";
             this.txtAddress.Size = new System.Drawing.Size(703, 63);
             this.txtAddress.TabIndex = 204;
+            this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtPhone
             // 
@@ -194,6 +196,7 @@
             this.txtPhone.SelectedText = "";
             this.txtPhone.Size = new System.Drawing.Size(206, 36);
             this.txtPhone.TabIndex = 202;
+            this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label22
             // 
@@ -224,6 +227,7 @@
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
             this.dtpDateOfBirth.Size = new System.Drawing.Size(206, 36);
             this.dtpDateOfBirth.TabIndex = 201;
+            this.dtpDateOfBirth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.dtpDateOfBirth.Value = new System.DateTime(2024, 1, 5, 1, 58, 25, 523);
             // 
             // txtEmail
@@ -394,6 +398,7 @@
             this.txtLastName.SelectedText = "";
             this.txtLastName.Size = new System.Drawing.Size(154, 36);
             this.txtLastName.TabIndex = 190;
+            this.txtLastName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtThirdName
             // 
@@ -419,6 +424,7 @@
             this.txtThirdName.SelectedText = "";
             this.txtThirdName.Size = new System.Drawing.Size(154, 36);
             this.txtThirdName.TabIndex = 189;
+            this.txtThirdName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtSecondName
             // 
@@ -444,6 +450,7 @@
             this.txtSecondName.SelectedText = "";
             this.txtSecondName.Size = new System.Drawing.Size(154, 36);
             this.txtSecondName.TabIndex = 188;
+            this.txtSecondName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 

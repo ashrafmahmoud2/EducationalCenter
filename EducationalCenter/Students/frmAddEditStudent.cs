@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EducationalCenterBusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,60 +17,31 @@ namespace My_Student_Center.Students
         {
             InitializeComponent();
         }
-
-        private void txtStudentID_TextChanged(object sender, EventArgs e)
+        public frmAddEditStudent(int StuedenID)
         {
+            InitializeComponent();
+        }
+        private void frmAddEditStudent_Load(object sender, EventArgs e)
+        {
+            _FillGraduationDegrees();
+        }
+
+        private void _FillGraduationDegrees()
+        {
+            cbGradeLevels.Items.Clear();
+            DataTable countriesDataTable = clsGraduationDegrees.GetAllGraduationDegrees();
+
+            foreach (DataRow row in countriesDataTable.Rows)
+            {
+                cbGradeLevels.Items.Add(row["DegreeName"]);
+            }
+
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
 
-        }
+     
 
-        private void guna2GroupBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCreatedByUser_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbGradeLevels_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ucPersoneCardWithFilter1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pbIsActive_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label22_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
