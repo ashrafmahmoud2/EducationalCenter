@@ -29,7 +29,7 @@ namespace EducationalCenterDataAccess
                     // The record was found
                     IsFound = true;
 
-                    StudentID = (int)reader["StudentID"];
+                // StudentID = (int)reader["StudentID"];
                     PersonID = (int)reader["PersonID"];
                     GradID = (int)reader["GradID"];
                     CreatedByUserID = (int)reader["CreatedByUserID"];
@@ -185,7 +185,7 @@ namespace EducationalCenterDataAccess
 
             return dt;
         }
-
+        
         public static bool DoesStudentExist(int StudentID)
         {
             bool exists = false;
@@ -214,6 +214,36 @@ namespace EducationalCenterDataAccess
 
             return exists;
         }
+
+        public static bool DoesStudentExistbyPersonID(int PersonID)
+        {
+            bool exists = false;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                try
+                {
+                    SqlCommand command = new SqlCommand("SELECT TOP 1 found = 1 FROM Students WHERE PersonID = @PersonID", connection);
+
+                    command.Parameters.AddWithValue("@PersonID", PersonID);
+
+                    connection.Open();
+
+                    object result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        exists = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+            }
+
+            return exists;
+        }
+
 
     }
 }

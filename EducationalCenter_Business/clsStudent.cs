@@ -24,7 +24,11 @@ namespace EducationalCenterBusinessLayer
             this.PersonID = 0;
             this.GradID = 0;
             this.CreatedByUserID = 0;
-            this.GradName = clsGraduationDegrees.Find(GradID).DegreeName;
+            if (this.GradID != 0)
+            {
+                clsGraduationDegrees grad = clsGraduationDegrees.Find(this.GradID);
+                this.GradName = (grad != null) ? grad.DegreeName : "";
+            }
 
             this.Mode = enMode.AddNew;
         }
@@ -34,7 +38,11 @@ namespace EducationalCenterBusinessLayer
             this.PersonID = PersonID;
             this.GradID = GradID;
             this.CreatedByUserID = CreatedByUserID;
-            this.GradName = clsGraduationDegrees.Find(GradID).DegreeName;
+            if (this.GradID != 0)
+            {
+                clsGraduationDegrees grad = clsGraduationDegrees.Find(this.GradID);
+                this.GradName = (grad != null) ? grad.DegreeName : "";
+            }
             this.Mode = enMode.Update;
         }
         public static clsStudents Find(int StudentID)
@@ -57,17 +65,18 @@ namespace EducationalCenterBusinessLayer
 
         private bool _UpdateStudents()
         {
-            return clsStudentsData.UpdateStudent(this.StudentID, this.PersonID, this.GradID, this.CreatedByUserID);
+            return clsStudentsData.UpdateStudent
+                (this.StudentID, this.PersonID, this.GradID, this.CreatedByUserID);
         }
 
         public bool Save()
         {
 
 
-            if (!base.Save())
-            {
-                return false; // If base.Save() returns false, return false immediately
-            }
+            //if (!base.Save())
+            //{
+            //    return false; 
+            //}
 
             switch (Mode)
             {
@@ -100,15 +109,20 @@ namespace EducationalCenterBusinessLayer
         {
             return clsStudentsData.DoesStudentExist(StudentsID);
         }
-        //static void Main(string[] args)
-        //{
-         
-        //   // TestAddStudents();
-        //  //  TestFindStudents();
-        //  // TestUpdateStudents();
-        //   //  TestDeleteStudents();
-        //    Console.ReadLine();
-        //}
+        
+        public static bool DoesStudentExist(int PersonID)
+        {
+            return clsStudentsData.DoesStudentExistbyPersonID(PersonID);
+        }
+        static void Main(string[] args)
+        {
+
+            // TestAddStudents();
+             // TestFindStudents();
+             TestUpdateStudents();
+            //  TestDeleteStudents();
+            Console.ReadLine();
+        }
         static void TestAddStudents()
         {
             clsStudents student = new clsStudents();
@@ -129,13 +143,13 @@ namespace EducationalCenterBusinessLayer
         }
         static void TestFindStudents()
         {
-            int StudentsIdToFind = 27; // Replace with the actual Students ID to find
+            int StudentsIdToFind = 22; // Replace with the actual Students ID to find
 
             clsStudents foundStudents = clsStudents.Find(StudentsIdToFind);
 
             if (foundStudents != null)
             {
-                //  Console.WriteLine($"Found Students: StudentsID={foundStudents.StudentID}, Notes={foundStudents.Notes}");
+                 Console.WriteLine($"Found Students: StudentsID={foundStudents.StudentID}");
             }
             else
             {
@@ -144,12 +158,12 @@ namespace EducationalCenterBusinessLayer
         }
         static void TestUpdateStudents()
         {
-            int StudentsIdToUpdate = 1; // Replace with the actual Students ID to update
+            int StudentsIdToUpdate = 18; // Replace with the actual Students ID to update
 
 
             clsStudents Students = clsStudents.Find(StudentsIdToUpdate);
 
-            Students.GradID = 12;
+            Students.GradID = 13;
 
             if (Students != null)
             {

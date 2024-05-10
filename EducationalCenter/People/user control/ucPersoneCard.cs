@@ -13,7 +13,20 @@ namespace My_Student_Center.People.user_control
 {
     public partial class ucPersoneCard : UserControl
     {
-        int _PersoneID;
+       private int _PersoneID;
+        private clsPeople _Persone;
+
+        public int PerosneID
+        {
+            get { return _PersoneID; }
+        }
+        public clsPeople SelectPersoneInfo
+        {
+            get { return _Persone; }
+
+        }
+
+
         public ucPersoneCard()
         {
             InitializeComponent();
@@ -35,12 +48,15 @@ namespace My_Student_Center.People.user_control
 
 
                 lblPersonID.Text = Person.PersonID.ToString();
-                rbMale.Checked = Person.Gender; 
+                rbMale.Checked = Person.Gender;
                 txtAddress.Text = Person.Address;
                 txtEmail.Text = Person.Email;
                 txtPhone.Text = Person.Phone;
                 dtpDateOfBirth.Value = Person.DateOfBirth;
             }
+            else
+             //   MessageBox.Show("No PerosneID=" + _PersoneID);
+            return;
         }
 
 
@@ -48,7 +64,13 @@ namespace My_Student_Center.People.user_control
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
             frmAddEditPersone frrm=new frmAddEditPersone(_PersoneID);
+            frrm.DataBack += DataBackHendler;
             frrm.ShowDialog();
+        }
+
+        private void DataBackHendler(object sender, int PerosneID)
+        {
+            FillUCPersoenInfo(PerosneID);
         }
     }
 }

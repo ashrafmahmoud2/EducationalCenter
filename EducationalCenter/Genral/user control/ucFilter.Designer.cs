@@ -33,14 +33,14 @@
             this.cbFindBy = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.gbFilter = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnFind = new Guna.UI2.WinForms.Guna2Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.gbFilter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtSearch
@@ -67,6 +67,7 @@
             this.txtSearch.SelectedText = "";
             this.txtSearch.Size = new System.Drawing.Size(273, 36);
             this.txtSearch.TabIndex = 144;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // cbFindBy
             // 
@@ -97,7 +98,6 @@
             this.label22.Size = new System.Drawing.Size(70, 21);
             this.label22.TabIndex = 142;
             this.label22.Text = "Find By:";
-            this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
             // gbFilter
             // 
@@ -115,15 +115,6 @@
             this.gbFilter.Size = new System.Drawing.Size(1026, 125);
             this.gbFilter.TabIndex = 4;
             this.gbFilter.Text = "Filter";
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 25;
-            this.guna2Elipse1.TargetControl = this;
             // 
             // pictureBox8
             // 
@@ -181,6 +172,15 @@
             this.btnFind.TabIndex = 145;
             this.btnFind.TabStop = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 25;
+            this.guna2Elipse1.TargetControl = this;
+            // 
             // ucFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,8 +190,8 @@
             this.Size = new System.Drawing.Size(1026, 125);
             this.gbFilter.ResumeLayout(false);
             this.gbFilter.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }

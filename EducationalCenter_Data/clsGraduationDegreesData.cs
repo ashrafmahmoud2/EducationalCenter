@@ -29,7 +29,7 @@ namespace EducationalCenterDataAccess
                     // The record was found
                     IsFound = true;
 
-                    GradID = (int)reader["GradID"];
+                   //GradID = (int)reader["GradID"];
                     DegreeName = (string)reader["DegreeName"];
                 }
                 else

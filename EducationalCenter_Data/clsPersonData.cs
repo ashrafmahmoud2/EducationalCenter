@@ -105,6 +105,7 @@ namespace EducationalCenterDataAccess
             SqlCommand command = new SqlCommand("SP_UpdatePeople", connection);
             command.CommandType = CommandType.StoredProcedure;
 
+            command.Parameters.AddWithValue("@PersonID", PersonID);
             command.Parameters.AddWithValue("@Name", Name);
             command.Parameters.AddWithValue("@Gender", Gender);
             command.Parameters.AddWithValue("@Age", Age);

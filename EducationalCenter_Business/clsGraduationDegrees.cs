@@ -74,14 +74,14 @@ namespace EducationalCenterBusinessLayer
         {
             return clsGraduationDegreesData.DoesGraduationDegreExist(GraduationDegreesID);
         }
-        static void Main(string[] args)
-        {
-          //  TestAddGraduationDegrees();
-            TestFindGraduationDegrees();
-            //TestUpdateGraduationDegrees();
-            //TestDeleteGraduationDegrees();
-            Console.ReadLine();
-        }
+        //static void Main(string[] args)
+        //{
+        //  //  TestAddGraduationDegrees();
+        //    TestFindGraduationDegrees();
+        //    //TestUpdateGraduationDegrees();
+        //    //TestDeleteGraduationDegrees();
+        //    Console.ReadLine();
+        //}
         static void TestAddGraduationDegrees()
         {
             clsGraduationDegrees grad = new clsGraduationDegrees();

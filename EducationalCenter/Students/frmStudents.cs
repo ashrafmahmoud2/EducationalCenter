@@ -18,9 +18,6 @@ namespace My_Student_Center.Students
     {
         private static DataTable _dt = clsStudents.GetAllStudents();
 
-        //make Deleget And Event In Uc
-
-
 
         public frmStudents()
         {
@@ -54,38 +51,45 @@ namespace My_Student_Center.Students
         {
             string filterColumn = "";
 
-            // Map selected filter to the corresponding column name
+
             switch (cbFilter.Text)
             {
+
+                case "رقم الطالب":
+                    filterColumn = "studentID";
+                    break;
+
                 case "رقم الشخص":
                     filterColumn = "personID";
                     break;
-                case "الطالب":
-                    filterColumn = "studentID";
-                    break;
-                case "الاسم":
+               
+                case "اسم الطالب":
                     filterColumn = "Name";
                     break;
+
                 case "الصف":
                     filterColumn = "DegreeName";
                     break;
                 case "الهاتف":
                     filterColumn = "Phone";
                     break;
-                case "البريد الإلكتروني":
+                case "البريد":
                     filterColumn = "Email";
                     break;
                 case "العنوان":
                     filterColumn = "Address";
                     break;
                 default:
+                    filterColumn = "";
                     break;
             }
 
-            // If the search text is empty or invalid filter column selected, reset the filter and return
+          //  MessageBox.Show(filterColumn);
+
             if (string.IsNullOrWhiteSpace(txtSearch.Text) || filterColumn == "")
             {
                 _dt.DefaultView.RowFilter = "";
+              
                 return;
             }
 
@@ -107,12 +111,17 @@ namespace My_Student_Center.Students
             }
 
         }
+        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            txtSearch.Visible = (cbFilter.Text != "الكل");
 
-     
-
-      
-
-
+            if (txtSearch.Visible)
+            {
+                txtSearch.Text = "";
+                txtSearch.Focus();
+            }
+        }
 
 
 
@@ -132,7 +141,7 @@ namespace My_Student_Center.Students
             
             clsPeople p = clsPeople.Find(10);
 
-            MessageBox.Show(p.Name);
+           // MessageBox.Show(p.Name);
 
             frmShowPersoneInfo frm = new frmShowPersoneInfo(PersonID);
             frm.ShowDialog();
@@ -148,12 +157,15 @@ namespace My_Student_Center.Students
         {
             frmAddEditStudent frm=new frmAddEditStudent();
             frm.ShowDialog();
+            RefreshDataGridView();
         }
 
         private void تعديلToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAddEditStudent frm= new frmAddEditStudent(_GetStuedentIDByDGV());
             frm.ShowDialog();
+            RefreshDataGridView();
+
         }
 
         private void مسحToolStripMenuItem_Click(object sender, EventArgs e)
@@ -174,6 +186,7 @@ namespace My_Student_Center.Students
                     MessageBox.Show("Failed to delete student.");
                 }
             }
+            RefreshDataGridView();
 
 
         }
@@ -182,8 +195,10 @@ namespace My_Student_Center.Students
         {
             frmAddEditStudent AddEditStudent = new frmAddEditStudent();
             AddEditStudent.ShowDialog();
+            RefreshDataGridView();
+
         }
 
-        
+
     }
 }

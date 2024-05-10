@@ -13,11 +13,11 @@ namespace My_Student_Center.People
 {
     public partial class frmAddEditPersone : Form
     {
-        //make Delget to Return the Value in Ucs
-        //Test Update Mode 
+        public delegate void DataBackEventHandler(object sender, int PeronseiD);
+        public event DataBackEventHandler DataBack;
 
-        
-
+       
+     
         enum enMode { Add = 0, Update = 1 }
 
         private enMode mode = enMode.Add;
@@ -27,6 +27,7 @@ namespace My_Student_Center.People
         public frmAddEditPersone()
         {
             InitializeComponent();
+         mode=   enMode.Add;
             _LoadData();
         }
 
@@ -93,47 +94,45 @@ namespace My_Student_Center.People
             }
         }
 
-        private void _SavePerson()
-        {
-           
-            if (_Person.Save())
-            {
-                MessageBox.Show($"Person saved, person ID: {_Person.PersonID}");
-            }
-            else
-            {
-                MessageBox.Show("Person save failed");
-            }
-        }
 
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             _GetDataFromForm();
 
-            if (mode==enMode.Update)
+            if (mode == enMode.Update)
             {
                 _Person.Mode = clsPeople.enMode.Update;
                 if (_Person.Save())
-                    MessageBox.Show("Update Suussfully");
+                {
+                    DataBack?.Invoke(this, _Person.PersonID);
+                    MessageBox.Show("Update Successful");
+                }
                 else
-                    MessageBox.Show("Update Faild");
-
+                {
+                    MessageBox.Show("Update Failed");
+                }
             }
             else
             {
-                _Person.Mode = clsPeople.enMode.AddNew;
+               // _Person.Mode = clsPeople.enMode.AddNew;
 
                 if (_Person.Save())
-                    MessageBox.Show($"Person Add, person ID: {_Person.PersonID}");
+                {
+                    DataBack?.Invoke(this, _Person.PersonID);
+                    MessageBox.Show($"Person Added, Person ID: {_Person.PersonID}");
+                }
                 else
-                    MessageBox.Show("Add Faild");
+                {
+                    MessageBox.Show("Add Failed");
+                }
             }
+
 
 
         }
 
 
-     
+
     }
 }

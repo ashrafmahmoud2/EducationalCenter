@@ -58,7 +58,8 @@ namespace EducationalCenterBusinessLayer
         }
         public bool _AddNewPeople()
         {
-            this.PersonID = clsPeopleData.AddNewPeople(this.Name, this.Gender, this.Age, this.DateOfBirth, this.Phone, this.Email, this.Address);
+            this.PersonID = clsPeopleData.AddNewPeople(
+                this.Name, this.Gender, this.Age, this.DateOfBirth, this.Phone, this.Email, this.Address);
             return (this.PersonID != -1);
         }
 
@@ -98,25 +99,23 @@ namespace EducationalCenterBusinessLayer
         {
             return clsPeopleData.DoesPeopleExist(PeopleID);
         }
-        //static void Main(string[] args)
-        //{
-        //   TestAddPeople();
-        //   TestFindPeople();
-        //   TestUpdatePeople();
-        //   TestDeletePeople();
-        //   Console.ReadLine();
-        //}
+       //static void Main(string[] args)
+       // {
+       // //  TestAddPeople();
+       // //   TestFindPeople();
+       //    TestUpdatePeople();
+       // //   TestDeletePeople();
+       //    Console.ReadLine();
+       // }
         static void TestAddPeople()
         {
             clsPeople person = new clsPeople();
-            person.PersonID = 0;
-            person.Name = null;
-            person.Gender = false;
-            person.Age = 0;
+            person.Name = "M1";
+            person.Gender = true;
             person.DateOfBirth = DateTime.Now;
-            person.Phone = null;
-            person.Email = null;
-            person.Address = null;
+            person.Phone = "FJKADL";
+            person.Email = "FJ;ADL";
+            person.Address = "JFDL";
             ;
 
             if (person.Save())
@@ -145,12 +144,13 @@ namespace EducationalCenterBusinessLayer
         }
         static void TestUpdatePeople()
         {
-            int PeopleIdToUpdate = 27; // Replace with the actual People ID to update
+            int PeopleIdToUpdate = 17; // Replace with the actual People ID to update
 
             clsPeople People = clsPeople.Find(PeopleIdToUpdate);
 
             if (People != null)
             {
+                People.Name = "new test";
                 //  Console.WriteLine($"Current Notes: PeopleID}");
 
                 // Modify the properties
