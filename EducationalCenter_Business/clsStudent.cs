@@ -114,15 +114,15 @@ namespace EducationalCenterBusinessLayer
         {
             return clsStudentsData.DoesStudentExistbyPersonID(PersonID);
         }
-        static void Main(string[] args)
-        {
+        //static void Main(string[] args)
+        //{
 
-            // TestAddStudents();
-             // TestFindStudents();
-             TestUpdateStudents();
-            //  TestDeleteStudents();
-            Console.ReadLine();
-        }
+        //    // TestAddStudents();
+        //     // TestFindStudents();
+        //     TestUpdateStudents();
+        //    //  TestDeleteStudents();
+        //    Console.ReadLine();
+        //}
         static void TestAddStudents()
         {
             clsStudents student = new clsStudents();

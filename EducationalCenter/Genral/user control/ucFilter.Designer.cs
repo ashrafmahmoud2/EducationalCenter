@@ -101,18 +101,19 @@
             // 
             // gbFilter
             // 
+            this.gbFilter.BorderRadius = 8;
+            this.gbFilter.BorderThickness = 0;
             this.gbFilter.Controls.Add(this.pictureBox8);
             this.gbFilter.Controls.Add(this.btnAdd);
             this.gbFilter.Controls.Add(this.btnFind);
             this.gbFilter.Controls.Add(this.txtSearch);
             this.gbFilter.Controls.Add(this.cbFindBy);
             this.gbFilter.Controls.Add(this.label22);
-            this.gbFilter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbFilter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbFilter.ForeColor = System.Drawing.Color.Black;
-            this.gbFilter.Location = new System.Drawing.Point(0, 0);
+            this.gbFilter.Location = new System.Drawing.Point(3, 3);
             this.gbFilter.Name = "gbFilter";
-            this.gbFilter.Size = new System.Drawing.Size(1026, 125);
+            this.gbFilter.Size = new System.Drawing.Size(855, 113);
             this.gbFilter.TabIndex = 4;
             this.gbFilter.Text = "Filter";
             // 
@@ -178,7 +179,7 @@
             // 
             // guna2Elipse1
             // 
-            this.guna2Elipse1.BorderRadius = 25;
+            this.guna2Elipse1.BorderRadius = 5;
             this.guna2Elipse1.TargetControl = this;
             // 
             // ucFilter
@@ -187,7 +188,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gbFilter);
             this.Name = "ucFilter";
-            this.Size = new System.Drawing.Size(1026, 125);
+            this.Size = new System.Drawing.Size(864, 119);
             this.gbFilter.ResumeLayout(false);
             this.gbFilter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();

@@ -45,12 +45,12 @@ namespace My_Student_Center.People
             if (mode == enMode.Add)
             {
               //  _SavePerson();
-                lblTitle.Text = "Add New Person";
+                lblTitle.Text = "اضافة شخص";
             }
             else
             {
                 _LoadDataInForm();
-                lblTitle.Text = "Update Person";
+                lblTitle.Text = "تعديل الشخص";
             }
         }
 
@@ -96,7 +96,9 @@ namespace My_Student_Center.People
 
 
 
-        private void btnSave_Click(object sender, EventArgs e)
+       
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
             _GetDataFromForm();
 
@@ -115,7 +117,7 @@ namespace My_Student_Center.People
             }
             else
             {
-               // _Person.Mode = clsPeople.enMode.AddNew;
+                // _Person.Mode = clsPeople.enMode.AddNew;
 
                 if (_Person.Save())
                 {
@@ -128,11 +130,6 @@ namespace My_Student_Center.People
                 }
             }
 
-
-
         }
-
-
-
     }
 }

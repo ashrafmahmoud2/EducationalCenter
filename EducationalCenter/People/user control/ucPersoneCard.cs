@@ -72,5 +72,10 @@ namespace My_Student_Center.People.user_control
         {
             FillUCPersoenInfo(PerosneID);
         }
+
+        private void txtAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

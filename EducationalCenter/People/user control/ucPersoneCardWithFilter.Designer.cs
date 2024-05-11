@@ -47,7 +47,8 @@
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.pictureBox8.Location = new System.Drawing.Point(194, 68);
+            this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox8.Location = new System.Drawing.Point(639, 64);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(31, 26);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -70,7 +71,7 @@
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(41)))), ((int)(((byte)(123)))));
-            this.txtSearch.Location = new System.Drawing.Point(427, 64);
+            this.txtSearch.Location = new System.Drawing.Point(166, 64);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
@@ -95,39 +96,42 @@
             this.cbFindBy.ItemHeight = 30;
             this.cbFindBy.Items.AddRange(new object[] {
             "PersoneID"});
-            this.cbFindBy.Location = new System.Drawing.Point(231, 64);
+            this.cbFindBy.Location = new System.Drawing.Point(445, 64);
             this.cbFindBy.Name = "cbFindBy";
             this.cbFindBy.Size = new System.Drawing.Size(176, 36);
             this.cbFindBy.TabIndex = 143;
+            this.cbFindBy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.White;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(117, 69);
+            this.label22.Location = new System.Drawing.Point(677, 64);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(70, 21);
+            this.label22.Size = new System.Drawing.Size(107, 21);
             this.label22.TabIndex = 142;
-            this.label22.Text = "Find By:";
+            this.label22.Text = ":البحث بواسطة";
             // 
             // gbFilter
             // 
-            this.gbFilter.Controls.Add(this.pictureBox8);
+            this.gbFilter.BorderRadius = 3;
+            this.gbFilter.BorderThickness = 0;
             this.gbFilter.Controls.Add(this.btnAdd);
             this.gbFilter.Controls.Add(this.btnFind);
+            this.gbFilter.Controls.Add(this.pictureBox8);
+            this.gbFilter.Controls.Add(this.label22);
             this.gbFilter.Controls.Add(this.txtSearch);
             this.gbFilter.Controls.Add(this.cbFindBy);
-            this.gbFilter.Controls.Add(this.label22);
-            this.gbFilter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbFilter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbFilter.ForeColor = System.Drawing.Color.Black;
-            this.gbFilter.Location = new System.Drawing.Point(0, 0);
+            this.gbFilter.Location = new System.Drawing.Point(2, 2);
             this.gbFilter.Name = "gbFilter";
-            this.gbFilter.Size = new System.Drawing.Size(1035, 140);
+            this.gbFilter.Size = new System.Drawing.Size(854, 119);
             this.gbFilter.TabIndex = 5;
             this.gbFilter.Text = "Filter";
+            this.gbFilter.Click += new System.EventHandler(this.gbFilter_Click);
             // 
             // btnAdd
             // 
@@ -146,11 +150,11 @@
             this.btnAdd.Image = global::My_Student_Center.Properties.Resources.icons8_add_male_user_group_100;
             this.btnAdd.ImageOffset = new System.Drawing.Point(1, 0);
             this.btnAdd.ImageSize = new System.Drawing.Size(45, 45);
-            this.btnAdd.Location = new System.Drawing.Point(706, 44);
+            this.btnAdd.Location = new System.Drawing.Point(21, 47);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(76, 75);
-            this.btnAdd.TabIndex = 146;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAdd.Size = new System.Drawing.Size(76, 72);
+            this.btnAdd.TabIndex = 187;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
             // 
             // btnFind
             // 
@@ -169,12 +173,11 @@
             this.btnFind.Image = global::My_Student_Center.Properties.Resources.icons8_find;
             this.btnFind.ImageOffset = new System.Drawing.Point(1, 0);
             this.btnFind.ImageSize = new System.Drawing.Size(45, 45);
-            this.btnFind.Location = new System.Drawing.Point(788, 44);
+            this.btnFind.Location = new System.Drawing.Point(93, 43);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(67, 75);
-            this.btnFind.TabIndex = 145;
+            this.btnFind.Size = new System.Drawing.Size(67, 72);
+            this.btnFind.TabIndex = 186;
             this.btnFind.TabStop = false;
-            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // errorProvider1
             // 
@@ -182,14 +185,16 @@
             // 
             // guna2Elipse1
             // 
-            this.guna2Elipse1.BorderRadius = 25;
+            this.guna2Elipse1.BorderRadius = 5;
+            this.guna2Elipse1.TargetControl = this;
             // 
             // ucPersoneCard1
             // 
+            this.ucPersoneCard1.BackColor = System.Drawing.Color.White;
             this.ucPersoneCard1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ucPersoneCard1.Location = new System.Drawing.Point(0, 140);
+            this.ucPersoneCard1.Location = new System.Drawing.Point(0, 167);
             this.ucPersoneCard1.Name = "ucPersoneCard1";
-            this.ucPersoneCard1.Size = new System.Drawing.Size(1035, 342);
+            this.ucPersoneCard1.Size = new System.Drawing.Size(861, 360);
             this.ucPersoneCard1.TabIndex = 1;
             this.ucPersoneCard1.Load += new System.EventHandler(this.ucPersoneCard1_Load);
             // 
@@ -197,10 +202,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.gbFilter);
             this.Controls.Add(this.ucPersoneCard1);
             this.Name = "ucPersoneCardWithFilter";
-            this.Size = new System.Drawing.Size(1035, 482);
+            this.Size = new System.Drawing.Size(861, 527);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.gbFilter.ResumeLayout(false);
             this.gbFilter.PerformLayout();
@@ -216,9 +222,9 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbFindBy;
         private System.Windows.Forms.Label label22;
         private Guna.UI2.WinForms.Guna2GroupBox gbFilter;
-        private Guna.UI2.WinForms.Guna2Button btnAdd;
-        private Guna.UI2.WinForms.Guna2Button btnFind;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2Button btnAdd;
+        private Guna.UI2.WinForms.Guna2Button btnFind;
     }
 }

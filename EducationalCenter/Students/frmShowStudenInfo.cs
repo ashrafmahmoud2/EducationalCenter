@@ -28,7 +28,7 @@ namespace My_Student_Center.Students
                 ucPersoneCard1.FillUCPersoenInfo(stu.PersonID);
                 txtCreatedByUser.Text = stu.CreatedByUserID.ToString();
                 txtStudentID.Text = stu.StudentID.ToString();
-                combo.SelectedIndex = combo.FindString(stu.GradName);
+                cbGradeLevels.SelectedIndex = cbGradeLevels.FindString(stu.GradName);
             }
             else
             {

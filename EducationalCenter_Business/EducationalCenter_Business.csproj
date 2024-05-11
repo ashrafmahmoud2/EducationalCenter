@@ -46,6 +46,7 @@
     <Compile Include="clsGraduationDegrees.cs" />
     <Compile Include="clsPeople.cs" />
     <Compile Include="clsStudent.cs" />
+    <Compile Include="clsTeachers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

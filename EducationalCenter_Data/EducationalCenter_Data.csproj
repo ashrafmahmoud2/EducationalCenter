@@ -55,6 +55,7 @@
     <Compile Include="clsLogHandler.cs" />
     <Compile Include="clsPersonData.cs" />
     <Compile Include="clsStudentData.cs" />
+    <Compile Include="clsTeachersData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

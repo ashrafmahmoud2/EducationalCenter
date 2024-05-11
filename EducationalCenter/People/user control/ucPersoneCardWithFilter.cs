@@ -14,24 +14,9 @@ namespace My_Student_Center.People.user_control
     public partial class ucPersoneCardWithFilter : UserControl
     {
 
-        //stop in make _IsOldStudent;
-
-        //sea khaled code
-
-        //code gen
-        //stroed prosuers:fix add ,add NVARCHAR(255) to prammters,
-        //Data Layer: command.Parameters.AddWithValue("@PersonID", PersonID)
-        //vs: mathod get the first Colum ID;
 
 
-
-        //Students
-        //code:don't make to setudent in same persoenID,text in combo Grad
-        //Add Age in Get All,records num,erro provider,libtitel Updatas
-
-
-        //vido
-        //deleget - event 
+       
 
 
 
@@ -98,10 +83,10 @@ namespace My_Student_Center.People.user_control
             get { return _PersoenID; }
         }
 
-        public int GetPersoenID()
-        {
-            return int.Parse(txtSearch.Text);
-        }
+        //public int GetPersoenID()
+        //{
+        //    return int.Parse(txtSearch.Text);
+        //}
 
 
         public void LodePerosoneInfo(int PersoneID)
@@ -151,17 +136,26 @@ namespace My_Student_Center.People.user_control
 
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-
-            frmAddEditPersone frm=new frmAddEditPersone();
-            frm.DataBack += DataBackEvent;
-            frm.ShowDialog();
-        }
+      
         private void DataBackEvent(object sender,int PerosneID)
         {
             txtSearch.Text = PerosneID.ToString();
             ucPersoneCard1.FillUCPersoenInfo(PerosneID);
+        }
+
+ 
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
+        {
+
+            frmAddEditPersone frm = new frmAddEditPersone();
+            frm.DataBack += DataBackEvent;
+            frm.ShowDialog();
+        }
+
+        private void gbFilter_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
